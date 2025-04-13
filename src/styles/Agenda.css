@@ -1,0 +1,218 @@
+.agenda-section {
+    display: flex;
+    padding: 4rem 2rem;
+    background-color: #154c9e;
+    color: white;
+    min-height: 100vh;
+    overflow: hidden;
+}
+
+.agenda-left {
+    flex: 1;
+    padding-right: 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.agenda-title {
+    font-size: 10rem;
+    font-weight: bold;
+    color: #FFCA5A;
+    margin-bottom: 1rem;
+    font-family: 'Anton', sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;     /* giống Event Info */
+    text-align: left;
+    margin-left: 30px;         /* ✅ giống Event Info */
+    margin-right: 0;           /* ❌ bỏ căn phải */
+}
+
+
+.agenda-subtitle {
+    font-size: 1.5rem;
+    font-family: 'Reddit Sans', sans-serif;
+    margin-bottom: -1rem;
+    text-align: left;
+    margin-left: 30px;         /* ✅ giống Event Info */
+    margin-right: 0;
+}
+
+
+.agenda-date {
+    font-size: 7rem;
+    font-weight: bold;
+    color: #7fa3d6;
+    margin-bottom: 0.5px;
+    text-align: left;
+    line-height: 1.2;
+    margin-left: 30px; /* ✅ giống Event Info */
+}
+
+
+.agenda-date.active {
+    color: white;
+}
+
+.agenda-right {
+    flex: 1;
+    display: flex;
+    align-items: center;
+}
+
+.agenda-timeline {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    position: relative;
+    padding-left: 40%;
+    padding-top: 15%;
+}
+
+/* White line */
+.agenda-timeline::before {
+    content: '';
+    position: absolute;
+    justify-content: left;
+    margin-left: -2.4%;
+    margin-top: 10%;
+    max-height: 610px;
+    width: 6px;
+    height: 72%;
+    overflow: hidden;
+    background-color: white;
+}
+
+.agenda-item {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+
+.agenda-item::before {
+    content: '';
+    width: 28px;
+    height: 28px;
+    background: white;
+    border-radius: 50%;
+    position: absolute;
+    left: -1.5rem;
+    top: 2rem;
+}
+
+.agenda-time {
+    font-weight: bold;
+    font-size: 2rem;
+    text-align: left;
+    padding-left: 10%;
+}
+
+.agenda-activity {
+    font-size: 1rem;
+    text-align: left;
+    padding-left: 10%;
+}
+
+.agenda-timeline.fade-in {
+    opacity: 1;
+    transition: opacity 0.3s ease-in;
+}
+
+.agenda-timeline.fade-out {
+    opacity: 0;
+    transition: opacity 0.3s ease-out;
+}
+
+.agenda-dots {
+    display: flex;
+    gap: 10px;
+    margin-top: 1.5rem;
+    margin-left: 15%;
+}
+
+.dot {
+    width: 12px;
+    height: 12px;
+    background-color: #ccc;
+    border-radius: 50%;
+    transition: background-color 0.3s;
+}
+
+.dot.active {
+    background-color: #ffd041;
+}
+
+/* Mobile Responsive (iPhone 16, Samsung S20+) */
+@media (max-width: 768px) {
+    .dot {
+        visibility: hidden;
+    }
+
+    .agenda-section {
+        padding: 1rem;
+        flex-direction: column;
+    }
+
+    .agenda-left {
+        width: 100%;
+        padding-right: 0;
+        margin-top: 1rem;
+        align-items: flex-end; /* Align date to the right */
+        text-align: right;
+        left: 30%;
+    }
+
+    .agenda-title {
+        font-size: 3.5rem;
+    }
+
+    .agenda-subtitle {
+        font-size: 0.7rem;
+        margin-bottom: 1rem;
+    }
+
+    .agenda-date {
+        font-size: 1.4rem;
+        margin: 0.5rem 0;
+    }
+
+    .agenda-right {
+        order: 1; /* Move timeline above date in DOM */
+        width: 100%;
+        padding: 1rem;
+        align-items: flex-start; /* Align timeline to the left */
+    }
+
+    .agenda-timeline {
+        padding-left: 5%;
+        padding-top: 2%;
+    }
+
+    .agenda-timeline::before {
+        margin-left: 0;
+        width: 2px;
+        height: 100%;
+        max-height: 200px;
+    }
+
+
+
+    .agenda-item::before {
+        left: -1rem;
+        top: 0.5rem;
+        width: 12px;
+        height: 12px;
+    }
+
+    .agenda-time {
+        font-size: 0.7rem;
+    }
+
+    .agenda-activity {
+        font-size: 0.6rem;
+    }
+
+    .agenda-dots {
+        gap: 8px;
+    }
+}

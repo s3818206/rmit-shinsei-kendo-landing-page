@@ -1,0 +1,34 @@
+.button-language {
+  padding: 2rem;
+  display: flex;
+  gap: 1rem;
+}
+
+.btn {
+  padding: 0.35rem 1.5rem;
+  transition: background-color 0.3s, box-shadow 0.3s;
+  font-weight: 500;
+  border-radius: 0.5rem;
+  opacity: 1;
+  font-size: 1.25rem; 
+}
+
+.btn.primary {
+  background-color: #464646; 
+  border: 1px solid #464646;
+  color: #ffffff;
+}
+
+.btn.primary:hover {
+  background-color: #ea4606; 
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
+}
+
+.btn.primary:active {
+  background-color: #d93d04; 
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); 
+}
+
+.btn:disabled {
+  opacity: 0.5;
+}
