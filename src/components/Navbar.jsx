@@ -139,7 +139,7 @@ export default function Navbar({ language, setLanguage }) {
                     onClick={() => handleNavigation("about")}
                     className="text-white cursor-pointer hover:text-yellow-300"
                 >
-                    {language === "en" ? `About Event` : `Về Sự Kiện`}
+                    {language === "en" ? `About` : `Về Sự Kiện`}
                 </button>
                 <span
                     onClick={handleRiktNavigation}
@@ -202,7 +202,8 @@ export default function Navbar({ language, setLanguage }) {
                                 }}
                                 className="hover:text-cyan-300 cursor-pointer"
                             >
-                                {currentContent.about}
+                                {/* {currentContent.about} */}
+                                {language === "en" ? `About` : `Về Sự Kiện`}
                             </button>
                         </li>
                         <li>
