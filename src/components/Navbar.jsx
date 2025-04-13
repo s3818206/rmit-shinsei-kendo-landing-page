@@ -129,12 +129,12 @@ export default function Navbar({ language, setLanguage }) {
 
             {/* Desktop Menu */}
             <div className="hidden lg:flex space-x-4 sm:space-x-6 text-xs sm:text-sm md:text-base font-medium">
-                <button
+                {/* <button
                     onClick={() => handleNavigation("home")}
                     className="text-white cursor-pointer hover:text-yellow-300"
                 >
                     {currentContent.home}
-                </button>
+                </button> */}
                 <button
                     onClick={() => handleNavigation("about")}
                     className="text-white cursor-pointer hover:text-yellow-300"
@@ -181,9 +181,9 @@ export default function Navbar({ language, setLanguage }) {
 
             {/* Mobile Menu */}
             {isOpen && (
-                <div className="absolute top-14 left-0 w-full bg-[#EB4E0B] text-white py-3 shadow-md lg:hidden">
+                <div className="absolute top-10 left-0 w-full bg-[#EB4E0B] text-white py-3 shadow-md lg:hidden">
                     <ul className="flex flex-col items-center space-y-3 text-xs sm:text-sm font-medium">
-                        <li>
+                        {/* <li>
                             <button
                                 onClick={() => {
                                     handleNavigation("home");
@@ -193,7 +193,7 @@ export default function Navbar({ language, setLanguage }) {
                             >
                                 {currentContent.home}
                             </button>
-                        </li>
+                        </li> */}
                         <li>
                             <button
                                 onClick={() => {
