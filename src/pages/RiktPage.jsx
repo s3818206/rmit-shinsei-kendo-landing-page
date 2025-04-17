@@ -138,33 +138,34 @@ const RiktPage = ({ language }) => {
 
             {/* About */}
 
-            <div className="flex flex-col items-start justify-center text-center px-8 pb-96 pt-10 animate-fadeIn lg:pl-50">
+            <div className="flex flex-col items-start justify-center text-center px-8 pb-96 pt-10 animate-fadeIn lg:pl-[126px]">
                 {/* Heading */}
-                <h2 className="anton-sc-regular text-4xl md:text-7xl lg:text-8xl font-bold text-[#FFCA5A] uppercase tracking-widest mb-6">
+                <h2 className="anton-sc-regular text-4xl md:text-7xl lg:text-8xl font-bold text-[#FFCA5A] uppercase tracking-normal mb-6 lg:text-[96px]">
                     {riktAbout.about[0]}
                 </h2>
 
                 {/* Paragraph */}
-                <p className="reddit-sans-regular text-white text-lg md:text-xl lg:text-2xl text-left leading-relaxed max-w-3xl">
+                <p className="reddit-sans-regular text-white text-lg md:text-xl lg:text-2xl lg:w-[682px] text-left leading-relaxed max-w-3xl lg:text-[24px]">
                     {riktAbout.about[1]} <strong>{riktAbout.about[2]}</strong>{" "}
                     {riktAbout.about[3]}
                     {riktAbout.about[4]}
                 </p>
             </div>
+
             {/* Event Information */}
-            <div className="w-full px-6 md:px-10 lg:px-20 py-16">
+            <div className="w-full px-6 md:px-10 lg:px-20 py-16 lg:pl-[126px] animate-fadeIn lg:pb-96 text-white pb">
                 {/* Heading full-width */}
-                <h1 className="text-[#FFCA5A] anton-sc-regular text-4xl sm:text-6xl md:text-7xl lg:text-8xl leading-tight tracking-widest text-left mb-6 lg:mb-14">
+                <h1 className="text-[#FFCA5A] anton-sc-regular text-4xl sm:text-6xl md:text-7xl lg:text-8xl leading-tight tracking-normal text-left mb-6 lg:mb-14">
                     {riktAbout.information[0]} {riktAbout.information[1]}
                 </h1>
 
                 {/* Content section: Info + Map */}
                 <div className="flex flex-col md:flex-row justify-between items-start gap-12 md:gap-24">
                     {/* Left Content: Info */}
-                    <div className="md:w-3/5 space-y-8 text-white reddit-sans-regular text-lg sm:text-xl md:text-2xl">
+                    <div className="md:w-3/5 space-y-8 text-white reddit-sans-regular text-xl sm:text-2xl md:text-3xl">
                         {/* Date */}
                         <div>
-                            <div className="opacity-70 mb-1 text-base md:text-lg">
+                            <div className="opacity-70 mb-1 text-lg lg:text-xl">
                                 Date
                             </div>
                             <div className="font-bold">
@@ -174,7 +175,7 @@ const RiktPage = ({ language }) => {
 
                         {/* Time */}
                         <div>
-                            <div className="opacity-70 mb-1 text-base md:text-lg">
+                            <div className="opacity-70 mb-1 text-lg lg:text-xl">
                                 Time
                             </div>
                             <div className="font-bold">
@@ -184,7 +185,7 @@ const RiktPage = ({ language }) => {
 
                         {/* Venue */}
                         <div>
-                            <div className="opacity-70 mb-1 text-base md:text-lg">
+                            <div className="opacity-70 mb-1 text-lg lg:text-xl">
                                 Venue
                             </div>
                             <div className="font-bold whitespace-pre-line">
@@ -213,11 +214,14 @@ const RiktPage = ({ language }) => {
             </div>
 
             {/* Agenda Section */}
-            <section ref={agendaSectionRef} className="relative text-white">
-                <div className="flex flex-col px-4 sm:px-4 lg:px-20 md:px-12 pt-10 lg:pt-24 pb-8">
+            <section
+                ref={agendaSectionRef}
+                className="relative text-white px-6 lg:pb-96"
+            >
+                <div className="flex flex-col  sm:px-4 md:px-12 pt-10 pb-8 lg:pl-[126px] lg:pr-[126px]">
                     {/* Top: Title */}
                     <div className="mb-6 md:mb-8">
-                        <h2 className="anton-sc-regular text-[clamp(2rem,8vw,8rem)] font-bold text-[#FFCA5A] uppercase tracking-widest leading-tight">
+                        <h2 className="anton-sc-regular text-[clamp(2rem,8vw,8rem)] font-bold text-[#FFCA5A] uppercase tracking-normal leading-tight">
                             Agenda
                         </h2>
                     </div>
@@ -251,34 +255,34 @@ const RiktPage = ({ language }) => {
                             </div>
 
                             {/* Right Side: Timeline */}
-                            <div className="flex-1 flex items-start justify-center relative pl-4 sm:pl-6 md:pl-12">
+                            <div className="flex-1 flex items-start justify-center relative sm:pl-6 md:pl-12">
                                 <div className="relative w-full max-w-md">
-                                    {/* Vertical line */}
-                                    <div className="absolute left-6.5 md:left-6 lg:left-13.5 top-0 h-full w-1 bg-white"></div>
+                                    {/* Timeline Line */}
+                                    <div className="absolute left-1.5 md:left-8 lg:left-17.5 top-0 h-full w-[4px] bg-white rounded"></div>
 
                                     {/* Timeline Items */}
-                                    <div className="flex flex-col gap-4 sm:gap-6 md:gap-8 pl-6 sm:pl-8 md:pl-12 transition-opacity duration-500">
+                                    <div className="flex flex-col gap-3 sm:gap-4 md:gap-6 pl-[-20px] md:pl-16 transition-opacity duration-500">
                                         {agendaData[dates[currentIndex]].map(
                                             (item, index, arr) => (
                                                 <div
                                                     key={index}
-                                                    className="relative flex items-center gap-2 sm:gap-4"
+                                                    className="relative flex items-center gap-4"
                                                 >
                                                     {/* Dot + Line */}
                                                     <div className="flex flex-col items-center">
-                                                        <div className="w-2 h-2 sm:w-3 sm:h-3 md:w-4 md:h-4 lg:mr-3 rounded-full bg-white border-2 border-white"></div>
+                                                        <div className="w-4 h-4 rounded-full bg-white border-2 border-white"></div>
                                                         {index !==
                                                             arr.length - 1 && (
-                                                            <div className="flex-1 w-px bg-white opacity-50 mt-1"></div>
+                                                            <div className="flex-1 w-[2px] bg-white opacity-60 mt-1"></div>
                                                         )}
                                                     </div>
 
                                                     {/* Content */}
                                                     <div>
-                                                        <div className="text-sm sm:text-base md:text-lg font-bold">
+                                                        <div className="text-base sm:text-lg md:text-xl font-bold">
                                                             {item.time}
                                                         </div>
-                                                        <div className="text-xs sm:text-sm md:text-base opacity-90">
+                                                        <div className="text-sm sm:text-base md:text-lg opacity-90">
                                                             {language === "en"
                                                                 ? item.activityEn
                                                                 : item.activityVi}
@@ -296,9 +300,9 @@ const RiktPage = ({ language }) => {
             </section>
 
             {/* Registration Section */}
-            <div className="w-full px-6 md:px-10 lg:px-20 py-16 animate-fadeIn text-white reddit-sans-regular">
+            <div className="w-full px-6 md:px-10 lg:px-20 py-16 animate-fadeIn text-white reddit-sans-regular lg:pl-[126px] lg:pr-[126px] lg:pb-96">
                 {/* Heading */}
-                <h2 className="text-[#FFCA5A] anton-sc-regular text-5xl sm:text-6xl md:text-7xl lg:text-8xl leading-tight tracking-widest mb-10 text-left">
+                <h2 className="text-[#FFCA5A] anton-sc-regular text-5xl sm:text-6xl md:text-7xl lg:text-8xl leading-tight tracking-normal mb-10 text-left">
                     {language === "en" ? `HOW TO REGISTER` : `Cách đăng ký?`}
                 </h2>
 

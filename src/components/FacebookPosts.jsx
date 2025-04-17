@@ -27,9 +27,9 @@ const FacebookPosts = ({ language }) => {
     ];
 
     return (
-        <section className="w-full min-h-[500px] sm:min-h-[700px] md:min-h-[800px] bg-blue-[185195] relative flex flex-col items-center pt-[50px] sm:pt-[80px] md:pt-[100px]">
+        <section className="w-full min-h-[500px] sm:min-h-[700px] md:min-h-[800px] bg-blue-[185195] relative flex flex-col items-center  sm:pt-[80px] md:pt-[100px] lg:px-[126px]">
             {/* Follow Paragraph */}
-            <div className="reddit-sans-regular  w-full text-left lg:pl-25 px-6 sm:px-8 mt-6 text-white text-xl sm:text-2xl md:text-3xl leading-relaxed">
+            <div className="reddit-sans-regular  w-full text-left px-6 lg:px-0 sm:px-8 mt-6 text-white text-xl sm:text-2xl md:text-3xl leading-relaxed">
                 Follow <br />
                 <span className="font-bold">
                     RMIT SGS Shinsei Kendo Club
@@ -39,7 +39,7 @@ const FacebookPosts = ({ language }) => {
             </div>
 
             {/* Posts Grid */}
-            <div className="relative z-10 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 mt-9 sm:mt-10 md:mt-14 px-6 sm:px-8">
+            <div className="relative z-10 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 mt-9 sm:mt-10 md:mt-14 ">
                 {posts.map((post) => (
                     <a
                         key={post.id}
@@ -51,8 +51,9 @@ const FacebookPosts = ({ language }) => {
                         <img
                             src={post.image}
                             alt={post.title}
-                            className="w-full h-[240px] sm:h-[260px] md:h-[280px] object-cover"
+                            className="w-full aspect-square object-cover"
                         />
+
                         <div className="mt-4 text-black font-bold text-lg sm:text-2xl">
                             {post.title}
                         </div>
